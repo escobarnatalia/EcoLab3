@@ -18,7 +18,6 @@ public class cambioColor extends AppCompatActivity {
     private Button naranjaBtn;
     private Button azulBtn;
     private Button verdeBtn;
-    private Button aceptarBtn;
     private ConstraintLayout colorLay;
 
     @Override
@@ -31,7 +30,6 @@ public class cambioColor extends AppCompatActivity {
         naranjaBtn = findViewById(R.id.naranjaBtn);
         azulBtn = findViewById(R.id.azulBtn);
         verdeBtn = findViewById(R.id.verdeBtn);
-        aceptarBtn = findViewById(R.id.aceptarBtn);
         colorLay = findViewById(R.id.colorLay);
 
         SharedPreferences fondo = getSharedPreferences("fondos", MODE_PRIVATE);
@@ -74,22 +72,10 @@ public class cambioColor extends AppCompatActivity {
                 }
         );
 
-        aceptarBtn.setOnClickListener(
-                (v)->{
-                    aceptarColor();
-                }
-        );
+
 
     }
 
-    public void onBackPressed(){
-        aceptarColor();
-    }
 
-    public void aceptarColor(){
-        Intent i = new Intent();
-        setResult(RESULT_OK, i);
-
-    }
 
 }

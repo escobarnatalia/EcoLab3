@@ -60,7 +60,7 @@ public class calcularNota extends AppCompatActivity implements View.OnClickListe
         String nParcial2Str = notaProyecto2.getText().toString();
         double nParcial2 = Double.parseDouble(nParcial2Str);
 
-        double resultado = (nProyecto1*0.15) + (nProyecto2*0.15) + (nQuices*0.15) + (nSemanal*0.5) + (nParcial1*0.25) + (nParcial2*0.25);
+        double resultado = (nProyecto1*0.15) + (nProyecto2*0.15) + (nQuices*0.15) + (nSemanal*0.5) + (nParcial1*0.25) + (nParcial2*0.25) / 6;
 
         Intent i = new Intent(this, resultadoFinal.class);
         i.putExtra("resultado", resultado);
