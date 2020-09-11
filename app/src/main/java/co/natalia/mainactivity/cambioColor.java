@@ -32,6 +32,41 @@ public class cambioColor extends AppCompatActivity {
         verdeBtn = findViewById(R.id.verdeBtn);
         colorLay = findViewById(R.id.colorLay);
 
+
+        naranjaBtn.setOnClickListener(
+                (v)->{
+                    Intent n = new Intent();
+                    n.putExtra("color", "Naranja");
+                    setResult(RESULT_OK, n);
+                    finish();
+                }
+        );
+
+        azulBtn.setOnClickListener(
+                (v)->{
+                    Intent a = new Intent();
+                    a.putExtra("color", "Azul");
+                    setResult(RESULT_OK, a);
+                    finish();
+                }
+        );
+
+        verdeBtn.setOnClickListener(
+                (v)->{
+                    Intent r = new Intent();
+                    r.putExtra("color", "Verde");
+                    setResult(RESULT_OK, r);
+                    finish();
+                }
+        );
+
+
+
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
         SharedPreferences fondo = getSharedPreferences("fondos", MODE_PRIVATE);
         String fondoConf = fondo.getString("colores", "NO_COLORES");
 
@@ -44,38 +79,5 @@ public class cambioColor extends AppCompatActivity {
         if (fondoConf.equals("Verde")){
             colorLay.setBackgroundColor(Color.rgb(126, 231, 61  ));
         }
-
-        naranjaBtn.setOnClickListener(
-                (v)->{
-                    Intent n = new Intent();
-                    n.putExtra("color", "Naranja");
-                    setResult(RESULT_OK);
-                    finish();
-                }
-        );
-
-        azulBtn.setOnClickListener(
-                (v)->{
-                    Intent a = new Intent();
-                    a.putExtra("color", "Azul");
-                    setResult(RESULT_OK);
-                    finish();
-                }
-        );
-
-        verdeBtn.setOnClickListener(
-                (v)->{
-                    Intent r = new Intent();
-                    r.putExtra("color", "Verde");
-                    setResult(RESULT_OK);
-                    finish();
-                }
-        );
-
-
-
     }
-
-
-
 }
